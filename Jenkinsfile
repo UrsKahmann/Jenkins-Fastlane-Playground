@@ -10,8 +10,7 @@ pipeline {
                         sh '''
                             #!/bin/bash -l
                             cd fastlane
-                            bundle install
-                            bundle exec fastlane setup '''
+                            fastlane setup '''
                     } 
                 }
             }
