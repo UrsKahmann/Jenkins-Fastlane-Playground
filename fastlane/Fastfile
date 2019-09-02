@@ -1,0 +1,10 @@
+
+lane :setup do |options|
+  puts "This is the setup lane"
+  import "helper.rb"
+  pretty_printer(text: "This is a test")
+end
+
+lane :build do |options|
+  puts "This is the build lane"
+end

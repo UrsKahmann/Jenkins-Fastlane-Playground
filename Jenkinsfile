@@ -2,12 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Setup') {
             steps {
                 echo 'Building..'
+                script {
+                    stage('Playing around') {
+                        sh '''
+                            #!/bin/bash -l
+                            cd fastlane
+                            bundle install
+                            bundle exec fastlane setup '''
+                    } 
+                }
             }
         }
-        stage('Test') {
+        stage('Build') {
             steps {
                 echo 'Testing..'
             }
